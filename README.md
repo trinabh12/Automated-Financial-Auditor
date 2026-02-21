@@ -31,3 +31,21 @@ Automated-Financial-Auditor/
 ├── main.py             # Pipeline orchestrator (Entry Point)
 ├── requirements.txt    # Project dependencies
 └── README.md
+```
+
+## 📸 Proof of Concept: The Audit Flow
+
+### 1. The "Red Flag" Analysis (Mismatches & Missing)
+The engine programmatically identifies and highlights issues. Below, the red rows indicate **Amount Mismatches** (discrepancies between internal records and the gateway), while yellow indicates records **Missing in Gateway**.
+
+<img width="1143" height="612" alt="aa" src="https://github.com/user-attachments/assets/dca2ed6e-3a0c-4590-bb90-6dc55afb9377" />
+
+
+### 2. Identifying Concurrency Issues (Duplicates)
+The auditor also catches **Duplicates**, where a single Transaction ID appears twice in the gateway statement, which could signify a double-charge error.
+
+<img width="1100" height="602" alt="aa2" src="https://github.com/user-attachments/assets/ffb5afc3-be71-4b55-b6fd-ea8887238257" />
+
+
+### 3. Final Stakeholder Delivery
+The logic is exported into a portable Excel format, ensuring that the findings are accessible to non-technical stakeholders (Finance/Accounting teams).
